@@ -4,10 +4,20 @@
   "buildCommand": "npm run build",
   "functions": {
     "api/index.ts": {
-      "includeFiles": ["lib/dist/**", "lib/package.json"],
-      "maxDuration": 300
+      "includeFiles": "lib/dist/**",
+      "maxDuration": 60
     }
   },
-  "crons": [{ "path": "/api/cron/tick", "schedule": "0 0 * * *" }],
-  "rewrites": [{ "source": "/(.*)", "destination": "/api" }]
+  "crons": [
+    {
+      "path": "/api/cron/tick",
+      "schedule": "0 0 * * *"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/api"
+    }
+  ]
 }
