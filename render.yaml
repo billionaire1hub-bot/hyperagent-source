@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: hyperagent
+    runtime: node
+    plan: free
+    buildCommand: npm install --include=dev && npm run build
+    startCommand: node artifacts/api-server/dist/index.js
+    healthCheckPath: /api/admin/health
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      # Sensible production defaults so the container boots without crashing.
+      # Real values (API keys, public URL) are set in the Render dashboard.
+      - key: HOST
+        value: 0.0.0.0
+      - key: DATA_DIR
+        value: data
+      - key: LOG_LEVEL
+        value: info

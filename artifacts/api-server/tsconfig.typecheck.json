@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "rootDir": "../..",
+    "paths": {
+      "hyperagent-lib": ["../../lib/src/index.ts"]
+    }
+  },
+  "include": ["src/**/*.ts", "../../lib/src/**/*.ts"]
+}

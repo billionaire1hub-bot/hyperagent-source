@@ -1,0 +1,12 @@
+node_modules
+dist
+.env
+logs/*.log
+data/*.json
+.git
+.gitignore
+README.md
+AGENTS.md
+Dockerfile
+.dockerignore
+*.md

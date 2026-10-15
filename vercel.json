@@ -1,0 +1,13 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "installCommand": "npm ci --include=dev",
+  "buildCommand": "npm run build",
+  "functions": {
+    "api/index.ts": {
+      "includeFiles": ["lib/dist/**", "lib/package.json"],
+      "maxDuration": 300
+    }
+  },
+  "crons": [{ "path": "/api/cron/tick", "schedule": "0 0 * * *" }],
+  "rewrites": [{ "source": "/(.*)", "destination": "/api" }]
+}

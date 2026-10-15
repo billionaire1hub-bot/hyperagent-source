@@ -1,0 +1,10 @@
+# Nixpacks (Railway/Render) build plan: ensure dev deps (TypeScript) are present,
+# compile both workspaces, then start the server with its autonomous workers.
+[phases.install]
+cmds = ["npm install --include=dev --no-audit --no-fund"]
+
+[phases.build]
+cmds = ["npm run build"]
+
+[start]
+cmd = "node artifacts/api-server/dist/index.js"

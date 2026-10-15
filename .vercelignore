@@ -1,0 +1,11 @@
+node_modules
+dist
+lib/dist
+artifacts/api-server/dist
+logs
+data
+.env
+.env.*
+!.env.example
+*.log
+.git
